@@ -180,6 +180,8 @@ h1,h2,h3,h4{font-family:'Sora',sans-serif;font-weight:800;line-height:1.05;lette
 
 /* form */
 .apply{display:grid;grid-template-columns:1.2fr .8fr;gap:46px;align-items:start}
+.embed{border:1px solid var(--bd);border-radius:var(--rl);overflow:hidden;background:#fff;box-shadow:var(--shadow)}
+.embed iframe{display:block;width:100%;border:0;min-height:820px;background:#fff}
 .form{display:grid;gap:18px}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .fld label{font-family:'Sora';font-size:12px;font-weight:600;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:7px}
