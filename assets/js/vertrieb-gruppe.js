@@ -40,20 +40,13 @@ document.querySelectorAll('.qa').forEach(function(it){var q=it.querySelector('.q
 /* demo form */
 document.querySelectorAll('form[data-demo]').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();var w=f.closest('[data-wrap]')||f.parentNode,ok=w.querySelector('.ok');f.style.display='none';if(ok){ok.classList.add('show');ok.scrollIntoView({behavior:'smooth',block:'center'});}});});
 
-/* Bewerbungs-Popup (Modal) */
+/* Bewerbung: boger-hr-Formular im neuen Tab öffnen (Embed top-level = funktioniert) */
 (function(){
-  var m=document.getElementById('applyModal'); if(!m) return;
-  var frame=m.querySelector('iframe'), loaded=false;
-  function open(){ if(!loaded){ frame.src=frame.getAttribute('data-src'); loaded=true; } m.classList.add('open'); m.setAttribute('aria-hidden','false'); document.body.classList.add('lock'); }
-  function close(){ m.classList.remove('open'); m.setAttribute('aria-hidden','true'); document.body.classList.remove('lock'); }
+  var APPLY="https://boger-hr.lovable.app/embed/jobs/cfbe85c33a48e6e4128148f16f894a29";
   document.addEventListener('click',function(e){
     var trig=e.target.closest('[data-apply], a[href="#bewerben"], a[href$="#bewerben"]');
-    if(trig){ e.preventDefault(); e.stopImmediatePropagation(); open(); return; }
-    if(e.target.closest('[data-close]')) close();
+    if(trig){ e.preventDefault(); e.stopImmediatePropagation(); window.open(APPLY,'_blank','noopener'); }
   });
-  document.addEventListener('keydown',function(e){ if(e.key==='Escape' && m.classList.contains('open')) close(); });
-  // Embed meldet Erfolg -> kurz Danke zeigen, dann schließen
-  window.addEventListener('message',function(e){ if(e.data && e.data.type==='boger-hr:application-success'){ setTimeout(close, 2500); } });
 })();
 
 /* anchors */
