@@ -182,6 +182,24 @@ h1,h2,h3,h4{font-family:'Sora',sans-serif;font-weight:800;line-height:1.05;lette
 .apply{display:grid;grid-template-columns:1.2fr .8fr;gap:46px;align-items:start}
 .embed{border:1px solid var(--bd);border-radius:var(--rl);overflow:hidden;background:#fff;box-shadow:var(--shadow)}
 .embed iframe{display:block;width:100%;border:0;min-height:820px;background:#fff}
+
+/* Launch-Panel im Bewerbungs-Abschnitt */
+.applycta{border:1px solid var(--bd);border-radius:var(--rl);background:linear-gradient(160deg,rgba(199,255,162,.1),rgba(95,171,223,.07));padding:44px 38px;display:flex;flex-direction:column;gap:18px;align-items:flex-start}
+.applycta h3{font-size:1.6rem}
+.applycta p{color:var(--muted)}
+
+/* ===== MODAL (Bewerbungs-Popup) ===== */
+.modal{position:fixed;inset:0;z-index:400;display:none;align-items:center;justify-content:center;padding:20px}
+.modal.open{display:flex}
+.modal__backdrop{position:absolute;inset:0;background:rgba(3,12,22,.72);backdrop-filter:blur(6px);animation:fade .3s ease}
+@keyframes fade{from{opacity:0}}
+.modal__card{position:relative;width:min(640px,100%);background:#fff;border-radius:var(--rl);overflow:hidden;box-shadow:0 40px 110px -20px rgba(0,0,0,.65);animation:modalin .35s var(--ease)}
+@keyframes modalin{from{opacity:0;transform:translateY(22px) scale(.98)}}
+.modal__x{position:absolute;top:12px;right:12px;z-index:3;width:38px;height:38px;border-radius:50%;border:0;background:rgba(8,22,12,.08);color:#0a2236;font-size:22px;line-height:1;cursor:pointer;display:grid;place-items:center;transition:.2s}
+.modal__x:hover{background:rgba(8,22,12,.16)}
+.modal__body{height:min(84vh,840px);overflow:auto;-webkit-overflow-scrolling:touch;background:#fff}
+.modal__body iframe{display:block;width:100%;height:100%;min-height:780px;border:0;background:#fff}
+@media(max-width:600px){.modal{padding:0}.modal__card{width:100%;height:100%;max-height:100%;border-radius:0}.modal__body{height:calc(100vh - 0px)}}
 .form{display:grid;gap:18px}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .fld label{font-family:'Sora';font-size:12px;font-weight:600;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:7px}

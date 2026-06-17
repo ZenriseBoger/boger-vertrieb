@@ -223,13 +223,10 @@
     <div class="wrap">
       <div class="shead rv"><span class="ix">08 — Bewerbung</span><h2>Beweis es. <span class="duoT">In 2 Minuten.</span></h2><p>Kein Lebenslauf-Zwang, kein Anschreiben. Nur du und deine Einstellung. Wir melden uns in 2 Werktagen.</p></div>
       <div class="apply">
-        <!-- Boger HR – Online-Bewerbung (geht direkt ins Recruiting-Board) -->
-        <div class="embed rv">
-          <iframe
-            src="https://boger-hr.lovable.app/embed/jobs/cfbe85c33a48e6e4128148f16f894a29"
-            title="Online-Bewerbung · Vertrieb Zenrise × Zentherm"
-            loading="lazy"
-            allow="clipboard-write"></iframe>
+        <div class="applycta rv">
+          <h3 class="duoT">In 2 Minuten beworben.</h3>
+          <p>Kurzes Formular, ein paar Fragen — und du bist im Rennen. Kein Anschreiben, kein Lebenslauf-Zwang. Die Bewerbung landet direkt bei uns im Recruiting.</p>
+          <button class="btn btn--p btn--lg" data-apply>Bewerbung jetzt starten <svg class="ar" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
         </div>
         <div class="side rv">
           <div class="ln"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg><div><small>Aufwand</small><strong>Unter 2 Minuten</strong></div></div>
@@ -291,6 +288,18 @@
     <a href="https://boger-gruppe.de">← Zur Hauptseite</a>
   </div>
 </footer>
+</div>
+
+<!-- BEWERBUNGS-POPUP -->
+<div class="modal" id="applyModal" aria-hidden="true">
+  <div class="modal__backdrop" data-close></div>
+  <div class="modal__card" role="dialog" aria-modal="true" aria-label="Online-Bewerbung">
+    <button class="modal__x" data-close aria-label="Schließen">×</button>
+    <div class="modal__body">
+      <iframe data-src="https://boger-hr.lovable.app/embed/jobs/cfbe85c33a48e6e4128148f16f894a29"
+        title="Online-Bewerbung · Vertrieb Zenrise × Zentherm" allow="clipboard-write" loading="lazy"></iframe>
+    </div>
+  </div>
 </div>
 
 <script src="assets/js/vertrieb-gruppe.js"></script>
